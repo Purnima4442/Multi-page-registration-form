@@ -1,2 +1,2 @@
 # Newcoding
-New repository
+Here i am learning and exploring github !
