@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>Responsive Registaration Form</title>
+        <link rel="stylesheet" href="./responsiveRegistration.css">
+        <script type="text/javascript" lang="javascript" src="./responsiveRegistaration.js"></script>
+        <style>
+
+*{box-sizing: border-box;
+}
+input[type=text], input[type=email], input[type=number], input[type=select], input[type=date],input[type=select],input[type=password], input[type=tel]
+{
+    width: 45%;
+    padding: 12px;
+    border: 1px solid rgb(168, 166, 166);
+    border-radius: 4px;
+    resize: vertical;
+}
+textarea{
+    width:45%;
+    padding: 12px;
+    border: 1px solid rgb(168, 166, 166);
+    border-radius: 4px;
+    resize: vertical;
+}
+input[type=radio],input[type=checkbox]{
+    width: 1%;
+    padding-left: 0%;
+    border: 1px solid rgb(168, 166, 166);
+    border-radius: 4px;
+    resize: vertical;
+}
+h1{
+    font-family: Arial;
+    font-size: medium;
+    font-style: normal;
+    font-weight: bold;
+    color: brown;
+    text-align: center;
+    text-decoration: solid;
+}
+label{
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float:left;
+}
+input[type=submit]:hover {
+background-color: #32a336;
+}
+.container{
+    border-radius: 5px;
+    background-color:#f2f2f2;
+    padding: 20px;
+}
+.col-10{
+    float: left;
+    width:10%;
+    margin-top: 6px;
+}
+.col-90{
+    float: left;
+    width: 90%;
+    margin-top: 6px;
+}
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+@media screen and (max-width: 600px) {
+    .col-10,.col-90,input[type=submit]{
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: rgb(5, 83, 22);
+}
+        </style>
+    </head>
+       
+    <body>
+        <h1>Student Registaration Form</h1>
+        <div class="container">
+            <form action="#" onclick="return validation()">
+            <div class="row">
+                <div class="col-10">
+                    <label for="fname">Student Name:</label>
+                </div>
+                <div class="col-90">
+                    <input type="text" id="fname" name="firstname" placeholder="Enter your first name">
+                    <span id="userfname"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-10">
+                    
+                </div>
+                <div class="col-90">
+                    <input type="text" id="lname" name="lastname" placeholder="Enter your last name">
+                    <span id="userlname"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-10">
+                    <label for="dob">Date Of Birth:</label>
+                </div>
+                <div class="col-90">
+                    <input type="date" id="dob" name="dob">
+                    <span id="userdob"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-10">
+                    <label for="email">Email:</label>
+                </div>
+                <div class="col-90">
+                    <input type="email" id="email" name="email" placeholder="it should contain @,.">
+                    <span id="useremail"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-10">
+                    <label for="ffname">Father Name:</label>
+                </div>
+                <div class="col-90">
+                    <input type="text" id="ffname" name="firstname" placeholder="Enter father first name">
+                    <span id="userffname"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-10">
+                    
+                </div>
+                <div class="col-90">
+                    <input type="text" id="flname" name="lastname" placeholder="Enter father last name">
+                    <span id="userflname"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-10">
+                    <label for="mfname">Mother Name:</label>
+                </div>
+                <div class="col-90">
+                    <input type="text" id="mfname" name="firstname" placeholder="Enter mother first name">
+                    <span id="usermfname"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-10">
+                    
+                </div>
+                <div class="col-90">
+                    <input type="text" id="mlname" name="lastname" placeholder="Enter mother last name">
+                    <span id="usermlname"></span>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-10">
+                    <label for="nationality">Nationality</label>
+                </div>
+                <div class="col-90">
+                    <input type="text" id="nationality" name="nationality">
+                    <span id="usernationality"></span>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-10">
+                    <label for="address">Home Address:</label>
+                </div>
+                <div class="col-90">
+                    <textarea name="address" id="address" cols="30" rows="10"></textarea>
+                    <span id="useraddress"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-10">
+                    <label for="city">City:</label>
+                </div>
+                <div class="col-90">
+                    <input type="text" id="city" name="city" placeholder="Enter City Name" maxlength="10">
+                    <span id="usercity"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-10">
+                    <label for="country">Country:</label>
+                </div>
+                <div class="col-90">
+                    <input type="text" id="country" name="country" placeholder="Enter Country Name" maxlength="10">
+                    <span id="usercountry"></span>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-10">
+                    <label for="thome">Telephone - Home</label>
+                </div>
+                <div class="col-90">
+                    <input type="tel" id="thome" name="mobile" placeholder="### ### ####">
+                    <span id="userthome"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-10">
+                    <label for="tmobile">Telephone - Mobile</label>
+                </div>
+                <div class="col-90">
+                    <input type="tel" id="tmobile" name="mobile" placeholder="### ### ####">
+                    <span id="usertmobile"></span>
+                </div>
+            </div>
+
+           
+            <div class="row">
+                <a href="next.html"> Next Page</a>
+            </div> 
+        </form> 
+        </div>  
+
+    <script type="text/javascript">
+     
+     function validation(){
+
+        var fname = document.getElementById('fname').value;
+        var lname = document.getElementById('lname').value;
+        var dob = document.getElementById('dob').value;
+        var email = document.getElementById('email').value;
+        var ffname = document.getElementById('ffname').value;
+        var flname = document.getElementById('flname').value;
+        var mfname = document.getElementById('mfname').value;
+        var mlname = document.getElementById('mlname').value;
+        var nationality = document.getElementById('nationality').value;
+        var address = document.getElementById('address').value;
+        var city = document.getElementById('city').value;
+        var country = document.getElementById('country').value;
+        var thome = document.getElementById('thome').value;
+        var tmobile = document.getElementById('tmobile').value;
+
+ //Student Firstname
+        if(fname == ""){
+            document.getElementById('userfname').innerHTML=" ** please fill the first name field";
+            return false;
+        }
+        if((fname.length <= 2)|| (fname.length > 20)){
+            document.getElementById('userfname').innerHTML=" ** User first name must be between 2 to 20";
+            return false;
+        }
+        if(!isNaN(fname)){
+            document.getElementById('userfname').innerHTML=" ** only characters are allowed";
+            return false;
+        }
+//Student last name
+        if(lname == ""){
+            document.getElementById('userlname').innerHTML=" ** please fill the last name field";
+            return false;
+        }
+        if((lname.length <= 2)|| (fname.length > 20)){
+            document.getElementById('userfname').innerHTML=" ** User last name must be between 2 to 20";
+            return false;
+        }
+        if(!isNaN(lname)){
+            document.getElementById('userfname').innerHTML=" ** only characters are allowed";
+            return false;
+        }
+//Student date of birth
+
+        if(dob == ""){
+            document.getElementById('userdob').innerHTML=" ** please fill the date of birth field";
+            return false;
+        }
+
+//Student email
+
+        if(email == ""){
+            document.getElementById('useremail').innerHTML=" ** please fill the email field";
+            return false;
+        }
+        if(email.indexOf('@') <= 0){
+            document.getElementById('useremail').innerHTML=" ** @ invalid position";
+            return false;
+        }
+        if((email.charAt(email.length-4)!='.') && (email.charAt(email.length-3)!='.')){
+            document.getElementById('useremail').innerHTML=" ** '.' invalid position";
+            return false;
+        }
+ //Student father firstname
+        if(ffname == ""){
+            document.getElementById('userffname').innerHTML=" ** please fill the father first name field";
+            return false;
+        }
+//Student father last name
+        if(flname == ""){
+            document.getElementById('userflname').innerHTML=" ** please fill the father last name field";
+            return false;
+        }
+//Student mother first name
+        if(mfname == ""){
+            document.getElementById('usermfname').innerHTML=" ** please fill the mother first name field";
+            return false;
+        }
+//Student mother first name
+        if(mlname == ""){
+          return false;
+        }
+
+//Student nationalityZ
+        if(nationality == ""){
+            document.getElementById('usernationality').innerHTML=" ** please enter your nationality";
+            return false;
+        }
+
+//Student address
+        if(address == ""){
+            document.getElementById('useraddress').innerHTML=" ** please enter your address";
+            return false;
+        }
+//Student city
+        
+        if(city == ""){
+            document.getElementById('usercity').innerHTML=" ** please enter your city";
+            return false;
+        }
+
+//Student country        
+        if(country == ""){
+            document.getElementById('usercountry').innerHTML=" ** please enter your country";
+            return false;
+        }
+//Student telephone-home
+        
+        if(thome == ""){
+            document.getElementById('userthome').innerHTML=" ** please enter your home no";
+            return false;
+        }
+
+        if(isNaN(thome)){
+            document.getElementById('userthome').innerHTML=" ** User must writes digits only not characters";
+            return false;
+        }
+        if(thome.length!=10){
+            document.getElementById('userthome').innerHTML=" ** User must writes 10 digits number ";
+            return false;
+        }
+//Student telephone - mobile
+        
+        if(tmobile == ""){
+            document.getElementById('usertmobile').innerHTML=" ** please enter your mobile no";
+            return false;
+        }
+        if(isNaN(tmobile)){
+            document.getElementById('usertmobile').innerHTML=" ** User must writes digits only not characters";
+            return false;
+        }
+        if(tmobile.length!=10){
+            document.getElementById('usertmobile').innerHTML=" ** Mobile number must be 10 digits";
+            return false;
+        }
+     } 
+
+    </script>
+
+    </body>
+</html>

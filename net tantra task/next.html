@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>Responsive Registaration Form</title>
+        <link rel="stylesheet" href="./responsiveRegistration.css">
+        <script type="text/javascript" lang="javascript" src="./responsiveRegistaration.js"></script>
+        <style>
+
+*{box-sizing: border-box;
+}
+input[type=text], input[type=email], input[type=number], input[type=select], input[type=date],input[type=select],input[type=password], input[type=tel]
+{
+    width: 45%;
+    padding: 12px;
+    border: 1px solid rgb(168, 166, 166);
+    border-radius: 4px;
+    resize: vertical;
+}
+textarea{
+    width:45%;
+    padding: 12px;
+    border: 1px solid rgb(168, 166, 166);
+    border-radius: 4px;
+    resize: vertical;
+}
+input[type=radio],input[type=checkbox]{
+    width: 1%;
+    padding-left: 0%;
+    border: 1px solid rgb(168, 166, 166);
+    border-radius: 4px;
+    resize: vertical;
+}
+h1{
+    font-family: Arial;
+    font-size: medium;
+    font-style: normal;
+    font-weight: bold;
+    color: brown;
+    text-align: center;
+    text-decoration: solid;
+}
+label{
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float:left;
+}
+input[type=submit]:hover {
+background-color: #32a336;
+}
+.container{
+    border-radius: 5px;
+    background-color:#f2f2f2;
+    padding: 20px;
+}
+.col-10{
+    float: left;
+    width:10%;
+    margin-top: 6px;
+}
+.col-90{
+    float: left;
+    width: 90%;
+    margin-top: 6px;
+}
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+@media screen and (max-width: 1500px) {
+    .col-10,.col-90,input[type=submit]{
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+        </style>
+    </head>
+       
+    <body>
+
+        <h1>Page 2</h1>
+       
+        <div class="container">
+            <form action="#" onclick="return pageTwoValidation()">
+            <div class="row">
+                <div class="col-10">
+                    <label for="hsc">HSC Institution Name:</label>
+                </div>
+                <div class="col-90">
+                    <input type="text" id="hsc" name="hsc" placeholder="Enter HSC institution name">
+                    <span id="h_inst_name"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-10">
+                    <label for="hscboard">HSC Board Name:</label>
+                </div>
+                <div class="col-90">
+                    <input type="text" id="hscboard" name="hscboard" placeholder="CBSC, ICSC or State Board">
+                    <span id="h_board_name"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-10">
+                    <label for="hscpercentage">HSC Percentage:</label>
+                </div>
+                <div class="col-90">
+                    <input type="number" id="hscpercentage" name="hscpercentage" placeholder="Enter HSC percentage">
+                    <span id="=hsc_percentage"></span>
+                </div>
+            </div>
+
+           
+                <div class="row">
+                    <div class="col-10">
+                        <label for="hsc">SSC Institution Name:</label>
+                    </div>
+                    <div class="col-90">
+                        <input type="text" id="ssc" name="hsc" placeholder="Enter SSC institution name">
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-10">
+                        <label for="sscboard">SSC Board Name:</label>
+                    </div>
+                    <div class="col-90">
+                        <input type="text" id="sscboard" name="sscboard" placeholder="CBSC, ICSC or State Board">
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-10">
+                        <label for="sscpercentage">SSC Percentage:</label>
+                    </div>
+                    <div class="col-90">
+                        <input type="number" id="sscpercentage" name="sscpercentage" placeholder="Enter HSC percentage">
+                    </div>
+                </div>
+
+            <div class="row">
+                <div class="col-10">
+                    <label for="currentlypursuing">Currently Pursuing:</label>
+                </div>
+                <div class="col-90">
+                    <input type="text" id="currentlypursuing" name="currentlypursuing" placeholder="Enter your current qualification">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-10">
+                    <label for="currently_ename">Currently Educational Institution Name:</label>
+                </div>
+                <div class="col-90">
+                    <input type="text" id="currently_ename" name="currently_ename" placeholder="Enter your current Educational institution name">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-10">
+                    <label for="overallpercentage">Overall Percentage:</label>
+                </div>
+                <div class="col-90">
+                    <input type="number" id="overallpercentage" name="overallpercentage">
+                </div>
+            </div>
+            
+            
+            <div class="row">
+                <div class="col-10">
+                    <label for="backlog">Current backlog if any:</label>
+                </div>
+                <div class="col-90">
+                    <input type="number" id="backlog" name="backlog">
+                </div>
+            </div>
+            
+            
+           
+            <div class="row">
+                <a href="upload.html"> Next Page</a>
+            </div>  
+         </form>
+        </div>  
+        <script type="text/javascript">
+           //javascript codes for validation purpose
+
+           function pageTwoValidation(){
+            
+           // declaring variable
+            var hsc = document.getElementById('hsc').value;
+            var hscboard = document.getElementById('hscboard').value;
+            var hscpercentage =document.getElementById('hscpercentage').value;
+
+            //putting condition for validation
+            if(hsc == ""){
+
+            document.getElementById('h_inst_name').innerHTML=" ** please fill the required field";
+            return false;
+            }
+            
+            if(hscboard == ""){
+            document.getElementById('h_board_name').innerHTML=" ** please fill the mother first name field";
+            return false;
+        }
+        if(hscpercentage == ""){
+            document.getElementById('hsc_percentage').innerHTML=" ** please enter your percentage no";
+            return false;
+        }
+        if(isNaN(hscpercentage)){
+            document.getElementById('hsc_percentage').innerHTML=" ** User must writes digits only not characters";
+            return false;
+        }
+        if(hscpercentage.length!=100){
+            document.getElementById('hsc_percentage').innerHTML=" ** percentage number must be 2 digits";
+            return false;
+        }
+        
+
+
+           }
+
+        </script>
+    </body>
+</html>
